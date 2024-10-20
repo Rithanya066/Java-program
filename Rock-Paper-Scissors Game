@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class RockPaperScissors
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        String[] rps = {"rock", "paper", "scissors"};
+        boolean playAgain = true;
+        while (playAgain)
+        {
+            System.out.println("Enter move (rock, paper, or scissors). To exit the game, type \"exit\": ");
+            String userMove = scanner.nextLine();
+            if (userMove.equals("exit")) 
+            {
+                playAgain = false;
+                break;
+            }
+            if (!userMove.equals("rock") && !userMove.equals("paper") && !userMove.equals("scissors"))
+            {
+                System.out.println("Invalid move, try again.");
+            }
+            else 
+            {
+                int randomIndex = (int) (Math.random() * 3);
+                String computerMove = rps[randomIndex];
+                System.out.println("Computer move: " + computerMove);
+                if (userMove.equals(computerMove)) 
+                {
+                    System.out.println("It's a tie!");
+                } 
+                else if ((userMove.equals("rock") && computerMove.equals("scissors")) ||
+                 (userMove.equals("scissors") && computerMove.equals("paper")) ||
+                 (userMove.equals("paper") && computerMove.equals("rock"))) 
+                {
+                    System.out.println("You win!");
+                } 
+                else 
+                {
+                    System.out.println("You lose!");
+                }
+            }
+            System.out.println("Play again? (yes/no): ");
+            String response = scanner.nextLine();
+            if (!response.equalsIgnoreCase("yes")) 
+            {
+                playAgain = false;
+            }
+        }
+        System.out.println("Thanks for playing!");
+        scanner.close();
+    }
+}
