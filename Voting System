@@ -2,14 +2,18 @@ class VotingSystem
 {
     static String[] candidates = {"Alice", "Bob", "Charlie"};
     static int[] votes = new int[candidates.length];
-    static void displayCandidates() {
+    static void displayCandidates()
+{
         System.out.println("Candidates:");
-        for (int i = 0; i < candidates.length; i++) {
+        for (int i = 0; i < candidates.length; i++) 
+{
             System.out.println((i + 1) + ". " + candidates[i]);
         }
     }
-    static void castVote(int choice) {
-        if (choice >= 1 && choice <= candidates.length) {
+    static void castVote(int choice) 
+{
+        if (choice >= 1 && choice <= candidates.length) 
+{
             votes[choice - 1]++;
             System.out.println("Vote casted for " + candidates[choice - 1]);
         } 
@@ -21,7 +25,8 @@ class VotingSystem
     static void displayResults()
     {
         System.out.println("\nVoting Results:");
-        for (int i = 0; i < candidates.length; i++) {
+        for (int i = 0; i < candidates.length; i++)
+{
             System.out.println(candidates[i] + ": " + votes[i] + " votes");
         }
     }
