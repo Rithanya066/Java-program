@@ -1,0 +1,36 @@
+class QuizApplication 
+{
+    public static void main(String[] args) 
+    {
+        String[] questions = 
+        {
+            "1. Which famous landmark is located in the heart of paris?",
+            "2. What is the result of  5 * 5?",
+            "3. In which year was the Eiffel Tower built?"
+        };
+        String[][] options =
+        {
+            {"A. Eiffel Tower", "B. Arc de Triomphe", "C. Notre-Dame Cathedral", "D. Louvre Museum"},
+            {"A. 20", "B. 25", "C. 30", "D. 35"},
+            {"A. 1889", "B. 1900", "C. 1910", "D. 1920"}
+        };
+        char[] answers = {'A', 'B', 'A'};
+        int score = 0;
+        for (int i = 0; i < questions.length; i++)
+{
+            System.out.println(questions[i]);
+            for (int j = 0; j < options[i].length; j++)
+            {
+                System.out.println(options[i][j]);
+            }
+            System.out.println("Enter your answer (A, B, C, or D):");
+            char answer = ' ';
+            answer = 'A';
+            if (answer == answers[i]) 
+            {
+                score++;
+            }
+        }
+        System.out.println("Your final score is: " + score + "/" + questions.length);
+    }
+}
