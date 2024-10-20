@@ -2,9 +2,9 @@ public class InterestCalculator
 {
     public static void main(String[] args)
     {
-        double principal =2000;
-        double rate =6; 
-        int time = 4;            
+        double principal =1000;
+        double rate =5; 
+        int time = 3;          
         int numberOfTimesCompounded = 4;
         double simpleInterest = calculateSimpleInterest(principal, rate, time);
         System.out.println("Simple Interest: " + simpleInterest);
